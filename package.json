@@ -1,14 +1,22 @@
 {
+  "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
+    "build": "esno scripts/picker.ts build",
+    "dev": "esno scripts/picker.ts --open",
+    "export": "esno scripts/picker.ts export"
   },
   "dependencies": {
     "@slidev/cli": "^0.43.2",
     "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
+    "@slidev/theme-seriph": "*",
+    "@types/node": "^20.9.4",
+    "@types/prompts": "^2.4.9",
+    "esno": "^4.0.0",
+    "execa": "^8.0.1",
+    "playwright-chromium": "^1.40.0",
+    "prompts": "^2.4.2",
+    "typescript": "^5.3.2"
   },
   "name": "slidev-presentations"
 }
