@@ -16,6 +16,14 @@ themeConfig:
 and the future of Python development
 ---
 
+# Who am I?
+
+---
+layout: center
+---
+
+# Question Time!
+---
 
 # How it all started
 <div class="flex flex-col justify-center h-full">
