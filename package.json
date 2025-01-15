@@ -7,13 +7,13 @@
     "export": "esno scripts/picker.ts export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.43.2",
+    "@slidev/cli": "^51.0.1",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
-    "@types/node": "^20.9.4",
+    "@types/node": "^22.10.6",
     "@types/prompts": "^2.4.9",
     "esno": "^4.0.0",
-    "execa": "^8.0.1",
+    "execa": "^9.5.2",
     "playwright-chromium": "^1.40.0",
     "prompts": "^2.4.2",
     "typescript": "^5.3.2"
