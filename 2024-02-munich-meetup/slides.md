@@ -15,8 +15,16 @@ themeConfig:
 
 and the future of Python development
 ---
+layout: image-right
+image: julian.jpg
+---
 
-# Who am I?
+# About me
+
+- bla
+- bla bla
+- bla bla bla
+- bla bla bla bla
 
 ---
 layout: center
