@@ -147,10 +147,33 @@ layout: two-cols
 
 <div class="max-w-xs">
 
+Initialization
 ```bash
 pixi init demo
 pixi add cowpy
 ```
+
+<div v-click class="mt-10">
+
+
+Running a task
+
+```bash
+pixi run cowpy "Hello Munich"
+```
+
+```
+ ______________ 
+< Hello Munich >
+ -------------- 
+     \   ^__^
+      \  (oo)\_______
+         (__)\       )\/\
+           ||----w |
+           ||     ||
+```
+
+</div>
 
 </div>
 
@@ -167,5 +190,69 @@ platforms = ["linux-64"]
 
 [dependencies]
 cowpy = ">=1.1.5,<2"
+```
+
+---
+layout: two-cols
+---
+
+# Pixi Workflow
+
+<div class="max-w-xs">
+
+Add a task
+```bash
+pixi task add hello 'cowpy "Hello Munich"'
+```
+
+<div v-click class="mt-10">
+
+
+Running a task
+
+```bash
+pixi run hello
+```
 
 ```
+ ______________ 
+< Hello Munich >
+ -------------- 
+     \   ^__^
+      \  (oo)\_______
+         (__)\       )\/\
+           ||----w |
+           ||     ||
+```
+
+</div>
+
+</div>
+
+::right::
+
+`pixi.toml`
+```toml {6-7}
+[project]
+name = "demo"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+hello = 'cowpy "Hello Munich"'
+
+[dependencies]
+cowpy = ">=1.1.5,<2"
+```
+
+---
+
+# Pixi Workflow
+
+- Use `cowpy` within Python
+
+---
+
+# Pixi Workflow
+
+- Showcase multi-environments
