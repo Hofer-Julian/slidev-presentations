@@ -21,10 +21,10 @@ image: julian.jpg
 
 # About me
 
-- bla
-- bla bla
-- bla bla bla
-- bla bla bla bla
+- Julian Hofer
+- ⚛️ Background in Physics
+- 💬 Thinks that languages are cool
+- 🤓 Loves to talk about package managers
 
 ---
 layout: center
@@ -32,15 +32,140 @@ layout: center
 
 # Question Time!
 ---
+layout: center
+---
 
-# How it all started
-<div class="flex flex-col justify-center h-full">
+# Have You Ever Used Python?
+---
+layout: center
+---
 
-```mermaid
-graph LR
-  A[Scientists with Fortran Code] --> B[Frustration]
-  B --> C[Need for Better Tools]
-  C --> D[Development of Conda]
+# Do You Use Conda to mangage your Python environments?
+---
+layout: center
+---
+
+# Do you use conda to develop on languages *apart* from Python?
+---
+layout: image-right
+image: numpylogo.svg
+backgroundSize: 30em
+---
+
+# Installing NumPy via pip
+
+From the NumPy contributor docs:
+
+
+- Install NumPy as a user:
+
+```bash
+pip install numpy
+```
+
+<div v-click>
+
+- Install NumPy as a developer:
+
+```bash
+# Debian
+sudo apt build-dep numpy
+# Fedora
+sudo dnf builddep numpy
+# Arch
+sudo pacman -S gcc-fortran openblas pkgconf
+# macOS
+brew install openblas pkg-config gfortran
+```
+Finally
+```bash
+pip install . --no-build-isolation
+```
+</div>
+
+---
+layout: image-right
+image: numpylogo.svg
+backgroundSize: 30em
+---
+
+# Installing NumPy via conda
+
+From the NumPy contributor docs:
+> If you are using Conda, you can skip the steps in this section - with the exception of installing compilers for Windows or the Apple Developer Tools for macOS. All other dependencies will be installed automatically [...] 
+
+
+```bash
+conda env create -f environment.yml
+
+# or
+pixi init --import environment.yml
+```
+
+
+---
+layout: center
+---
+
+# Ecosystem Comparison
+
+<div class="w-lg">
+
+|                       | Conda | PyPI |
+|-----------------------|-------|------|
+| Official Python index | ⚠️    | ✅   |
+| Binary packages                | ✅    | ⚠️   |
+| Cross-platform        | ✅    | ✅   |
+| Cross-language        | ✅    | ⚠️   |
+| Decentralized         | ✅    | ⚠️   |
+| Traditional package manager           | conda | pip  |
+| Modern package manager                | pixi  | uv   |
+
+</div>
+
+---
+layout: image-right
+image: paxton-text-in-circle.svg
+backgroundSize: 40em
+---
+
+# Introducing pixi
+
+- Workflow management
+- Multi-environments
+- Fast
+- Open-Source
+- Reproducible thanks to lock-files
+
+
+
+---
+layout: two-cols
+---
+
+# Pixi Workflow
+
+<div class="max-w-xs">
+
+```bash
+pixi init demo
+pixi add cowpy
 ```
 
 </div>
+
+::right::
+
+`pixi.toml`
+```toml
+[project]
+name = "demo"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+
+[dependencies]
+cowpy = ">=1.1.5,<2"
+
+```
