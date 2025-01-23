@@ -13,13 +13,13 @@ themeConfig:
 
 # Pixi, Conda,
 
-and the future of Python development
+and the Future of Python Development
 ---
 layout: image-right
 image: julian.jpg
 ---
 
-# About me
+# About Me
 
 - Julian Hofer
 - ⚛️ Background in Physics
@@ -40,19 +40,19 @@ layout: center
 layout: center
 ---
 
-# Do You Use Conda to mangage your Python environments?
+# Do You Use Conda to Manage Your Python Environments?
 ---
 layout: center
 ---
 
-# Do you use conda to develop on languages *apart* from Python?
+# Do You Use Conda to Develop on Languages *Apart* from Python?
 ---
 layout: image-right
 image: numpylogo.svg
 backgroundSize: 30em
 ---
 
-# Installing NumPy via pip
+# Installing NumPy via Pip
 
 From the NumPy contributor docs:
 
@@ -89,7 +89,7 @@ image: numpylogo.svg
 backgroundSize: 30em
 ---
 
-# Installing NumPy via conda
+# Installing NumPy via Conda
 
 From the NumPy contributor docs:
 > If you are using Conda, you can skip the steps in this section - with the exception of installing compilers for Windows or the Apple Developer Tools for macOS. All other dependencies will be installed automatically [...] 
@@ -113,13 +113,13 @@ layout: center
 
 |                       | Conda | PyPI |
 |-----------------------|-------|------|
-| Official Python index | ⚠️    | ✅   |
-| Binary packages                | ✅    | ⚠️   |
-| Cross-platform        | ✅    | ✅   |
-| Cross-language        | ✅    | ⚠️   |
+| Official Python Index | ⚠️    | ✅   |
+| Binary Packages       | ✅    | ⚠️   |
+| Cross-Platform        | ✅    | ✅   |
+| Cross-Language        | ✅    | ⚠️   |
 | Decentralized         | ✅    | ⚠️   |
-| Traditional package manager           | conda | pip  |
-| Modern package manager                | pixi  | uv   |
+| Traditional Package Manager | conda | pip  |
+| Modern Package Manager      | pixi  | uv   |
 
 </div>
 
@@ -129,7 +129,7 @@ image: paxton-text-in-circle.svg
 backgroundSize: 40em
 ---
 
-# Introducing pixi
+# Introducing Pixi
 
 - Workflow management
 - Multi-environments
