@@ -304,3 +304,7 @@ pixi run hello --environment=py313
 
 `hello.py`
 <<< @/snippets/pixi-multi-env/hello.py
+
+---
+
+# Space efficient
