@@ -208,7 +208,7 @@ pixi run python hello.py
 layout: two-cols
 ---
 
-# Pixi Workflow
+# Tasks
 
 <div class="max-w-xs">
 
@@ -251,7 +251,7 @@ pixi run hello
 layout: two-cols
 ---
 
-# Pixi Workflow
+# Multiple Environments
 
 <div class="max-w-xs">
 
