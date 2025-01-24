@@ -369,3 +369,26 @@ graph LR
 ```
 
 </v-click>
+
+---
+
+<div class="grid grid-cols-6 gap-4 mt-4">
+  <img src="/public/languages/c/c-original.svg" alt="C">
+  <img src="/public/languages/cplusplus/cplusplus-original.svg" alt="C++">
+  <img src="/public/languages/csharp/csharp-original.svg" alt="C#">
+  <img src="/public/languages/fortran/fortran-original.svg" alt="F">
+  <img src="/public/languages/go/go-original.svg" alt="Go">
+  <img src="/public/languages/haskell/haskell-original.svg" alt="Haskell">
+  <img src="/public/languages/java/java-original-wordmark.svg" alt="Java Wordmark">
+  <img src="/public/languages/javascript/javascript-original.svg" alt="JavaScript">
+  <img src="/public/languages/kotlin/kotlin-original.svg" alt="Kotlin">
+  <img src="/public/languages/lua/lua-original.svg" alt="Lua">
+  <img src="/public/languages/nodejs/nodejs-original-wordmark.svg" alt="Node.js Wordmark">
+  <img src="/public/languages/php/php-original.svg" alt="PHP">
+  <img src="/public/languages/python/python-original.svg" alt="Python">
+  <img src="/public/languages/r/r-original.svg" alt="R">
+  <img src="/public/languages/rust/rust-original.svg" alt="Rust">
+  <img src="/public/languages/typescript/typescript-original.svg" alt="TS">
+  <img src="/public/languages/wasm/wasm-original.svg" alt="R">
+  <img src="/public/languages/zig/zig-original-wordmark.svg" alt="Zig Wordmark">
+</div>
