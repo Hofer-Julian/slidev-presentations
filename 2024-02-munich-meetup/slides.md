@@ -1,6 +1,6 @@
 ---
 theme: seriph
-class: 'text-center'
+class: "text-center"
 highlighter: shiki
 lineNumbers: false
 fonts:
@@ -8,7 +8,7 @@ fonts:
   mono: "Fira Mono"
 colorSchema: dark
 themeConfig:
-  primary: '#facc15'
+  primary: "#facc15"
 ---
 
 # Pixi, Conda,
