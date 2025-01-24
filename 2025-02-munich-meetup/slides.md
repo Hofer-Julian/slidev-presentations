@@ -307,4 +307,65 @@ pixi run hello --environment=py313
 
 ---
 
+# Lock file
+
+- 👐 `pixi.toml`: direct dependencies
+- 🔒 `pixi.lock`: whole dependency graph
+- 🎆 Fully reproducible setup
+
+<div class="mt-10">
+
+<<< @/snippets/pixi-multi-env/pixi.lock yaml {123-131}{lines: true, maxHeight: '250px'}
+
+</div>
+
+
+---
+layout: two-cols
+---
+
 # Space efficient
+
+<div class="max-w-xs">
+
+
+```bash
+tree -L 3 -a
+```
+
+```
+.
+├── .gitattributes
+├── .gitignore
+├── hello.py
+├── .pixi
+│   ├── envs
+│   │   ├── default
+│   │   ├── py312
+│   │   └── py313
+│   └── .gitignore
+├── pixi.lock
+└── pixi.toml
+```
+
+</div>
+
+::right::
+
+<v-click>
+
+```mermaid
+graph LR
+    subgraph Project 1
+        A[Environment: default] --> B[Global Cache for Shared Packages]
+        C[Environment: py312] --> B
+        E[Environment: py313] --> B
+    end
+    subgraph Project 2
+        G[Environment: default] --> B
+        I[Environment: dev] --> B
+        K[Environment: lint] --> B
+    end
+```
+
+</v-click>
