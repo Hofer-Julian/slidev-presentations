@@ -153,9 +153,9 @@ pixi init demo
 ```
 <v-click>
 
-Adding `cowpy`
+Adding `cowpy` and `python`
 ```bash
-pixi add cowpy
+pixi add cowpy python
 ```
 
 </v-click>
@@ -166,7 +166,7 @@ pixi add cowpy
 Running a task
 
 ```bash
-pixi run python main.py
+pixi run python hello.py
 ```
 
 ```
@@ -199,7 +199,7 @@ platforms = ["linux-64"]
 [dependencies]
 ```
 
-```toml {8-9}
+```toml {8-10}
 [project]
 name = "demo"
 channels = ["conda-forge"]
@@ -208,18 +208,18 @@ platforms = ["linux-64"]
 [tasks]
 
 [dependencies]
-cowpy = ">=1.1.5,<2"
+cowpy = "1.1.*"
+python = "3.13.*"
 ```
 ````
 
 <v-click at="2">
 
-`main.py`
+`hello.py`
 ```python
-from cowpy import cow
+from cowpy.hello import Cowacter
 
-cheese = cow.Cowacter(thoughts=True)
-msg = cheese.milk("Hello Munich!")
+msg = Cowacter().milk("Hello Munich!")
 print(msg)
 ```
 
@@ -235,7 +235,7 @@ layout: two-cols
 
 Add a task
 ```bash
-pixi task add hello "python main.py"
+pixi task add hello "python hello.py"
 ```
 
 <div v-click>
@@ -272,14 +272,97 @@ channels = ["conda-forge"]
 platforms = ["linux-64"]
 
 [tasks]
-hello = "python main.py"
+hello = "python hello.py"
 
 [dependencies]
-cowpy = ">=1.1.5,<2"
+cowpy = "1.1.*"
+python = "3.13.*"
 ```
 
+---
+layout: two-cols
 ---
 
 # Pixi Workflow
 
-- Showcase multi-environments
+<div class="max-w-xs">
+
+<v-click>
+
+```bash
+pixi run hello --environment=py312
+```
+
+```
+ _________________________ 
+< Hello from Python 3.12! >
+ ------------------------- 
+     \   ^__^
+      \  (oo)\_______
+         (__)\       )\/\
+           ||----w |
+           ||     ||
+```
+
+</v-click>
+<v-click>
+
+```bash
+pixi run hello --environment=py313
+```
+
+```
+ _________________________ 
+< Hello from Python 3.13! >
+ ------------------------- 
+     \   ^__^
+      \  (oo)\_______
+         (__)\       )\/\
+           ||----w |
+           ||     ||
+```
+
+</v-click>
+
+
+</div>
+
+::right::
+
+`pixi.toml`
+
+```toml {9-}{maxHeight: '250px'}
+[project]
+name = "demo"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+hello = 'python hello.py'
+
+[dependencies]
+cowpy = "1.1.*"
+
+[feature.py312.dependencies]
+python = "3.12.*"
+
+[feature.py313.dependencies]
+python = "3.13.*"
+
+[environments]
+py312 = ["py312"]
+py313 = ["py313"]
+
+```
+
+
+
+`hello.py`
+```python
+from sys import version_info as vi
+from cowpy.cow import Cowacter
+
+python_version = f"Python {vi.major}.{vi.minor}"
+msg = Cowacter().milk(f"Hello from {python_version}!")
+print(msg)
+```
