@@ -188,40 +188,19 @@ pixi run python hello.py
 
 `pixi.toml`
 ````md magic-move {at: 1}
-```toml
-[project]
-name = "demo"
-channels = ["conda-forge"]
-platforms = ["linux-64"]
 
-[tasks]
+<<< @/snippets/pixi-init/pixi.toml
 
-[dependencies]
-```
+<<< @/snippets/pixi-deps-add/pixi.toml {8-10}
 
-```toml {8-10}
-[project]
-name = "demo"
-channels = ["conda-forge"]
-platforms = ["linux-64"]
-
-[tasks]
-
-[dependencies]
-cowpy = "1.1.*"
-python = "3.13.*"
-```
 ````
 
 <v-click at="2">
 
 `hello.py`
-```python
-from cowpy.hello import Cowacter
 
-msg = Cowacter().milk("Hello Munich!")
-print(msg)
-```
+<<< @/snippets/pixi-deps-add/hello.py python
+
 
 </v-click>
 
@@ -265,19 +244,8 @@ pixi run hello
 ::right::
 
 `pixi.toml`
-```toml {6-7}
-[project]
-name = "demo"
-channels = ["conda-forge"]
-platforms = ["linux-64"]
+<<< @/snippets/pixi-task-add/pixi.toml {6-7}
 
-[tasks]
-hello = "python hello.py"
-
-[dependencies]
-cowpy = "1.1.*"
-python = "3.13.*"
-```
 
 ---
 layout: two-cols
@@ -331,38 +299,8 @@ pixi run hello --environment=py313
 
 `pixi.toml`
 
-```toml {9-}{maxHeight: '250px'}
-[project]
-name = "demo"
-channels = ["conda-forge"]
-platforms = ["linux-64"]
-
-[tasks]
-hello = 'python hello.py'
-
-[dependencies]
-cowpy = "1.1.*"
-
-[feature.py312.dependencies]
-python = "3.12.*"
-
-[feature.py313.dependencies]
-python = "3.13.*"
-
-[environments]
-py312 = ["py312"]
-py313 = ["py313"]
-
-```
-
+<<< @/snippets/pixi-multi-env/pixi.toml {9-}{maxHeight: '250px'}
 
 
 `hello.py`
-```python
-from sys import version_info as vi
-from cowpy.cow import Cowacter
-
-python_version = f"Python {vi.major}.{vi.minor}"
-msg = Cowacter().milk(f"Hello from {python_version}!")
-print(msg)
-```
+<<< @/snippets/pixi-multi-env/hello.py
