@@ -150,16 +150,23 @@ layout: two-cols
 Initialization
 ```bash
 pixi init demo
+```
+<v-click>
+
+Adding `cowpy`
+```bash
 pixi add cowpy
 ```
 
-<div v-click class="mt-10">
+</v-click>
+
+<v-click at="3">
 
 
 Running a task
 
 ```bash
-pixi run cowpy "Hello Munich"
+pixi run python main.py
 ```
 
 ```
@@ -173,14 +180,26 @@ pixi run cowpy "Hello Munich"
            ||     ||
 ```
 
-</div>
+</v-click>
 
 </div>
 
 ::right::
 
 `pixi.toml`
+````md magic-move {at: 1}
 ```toml
+[project]
+name = "demo"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+
+[dependencies]
+```
+
+```toml {8-9}
 [project]
 name = "demo"
 channels = ["conda-forge"]
@@ -191,6 +210,20 @@ platforms = ["linux-64"]
 [dependencies]
 cowpy = ">=1.1.5,<2"
 ```
+````
+
+<v-click at="2">
+
+`main.py`
+```python
+from cowpy import cow
+
+cheese = cow.Cowacter(thoughts=True)
+msg = cheese.milk("Hello Munich!")
+print(msg)
+```
+
+</v-click>
 
 ---
 layout: two-cols
@@ -202,10 +235,10 @@ layout: two-cols
 
 Add a task
 ```bash
-pixi task add hello 'cowpy "Hello Munich"'
+pixi task add hello "python main.py"
 ```
 
-<div v-click class="mt-10">
+<div v-click>
 
 
 Running a task
@@ -239,17 +272,11 @@ channels = ["conda-forge"]
 platforms = ["linux-64"]
 
 [tasks]
-hello = 'cowpy "Hello Munich"'
+hello = "python main.py"
 
 [dependencies]
 cowpy = ">=1.1.5,<2"
 ```
-
----
-
-# Pixi Workflow
-
-- Use `cowpy` within Python
 
 ---
 
