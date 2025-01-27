@@ -9,11 +9,13 @@ fonts:
 colorSchema: dark
 themeConfig:
   primary: "#facc15"
+title: Pixi, Conda, and the Future of Python Development
 ---
 
-# Pixi, Conda,
+<h1 style="color: var(--slidev-theme-primary)">Pixi, Conda,</h1>
 
 and the Future of Python Development
+
 ---
 layout: image-right
 image: julian.jpg
@@ -21,7 +23,7 @@ image: julian.jpg
 
 # About Me
 
-- Julian Hofer
+- 👤 Julian Hofer
 - ⚛️ Background in Physics
 - 💬 Thinks that languages are cool
 - 🤓 Loves to talk about package managers
@@ -35,7 +37,7 @@ layout: center
 layout: center
 ---
 
-# Have You Ever Used Python?
+# Do You Use Python at Least on a Weekly Basis?
 ---
 layout: center
 ---
