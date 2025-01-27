@@ -46,6 +46,30 @@ layout: center
 ---
 
 # Do You Use Conda to Develop on Languages *Apart* from Python?
+
+---
+layout: image-right
+image: conda.png
+backgroundSize: 15em
+---
+
+# What is Conda?
+
+- Cross-platform package ecosystem
+- Full support for binary packages
+
+<v-clicks>
+
+- Most commonly used for scientific Python
+  - Most science libraries have a C or Fortran core
+- Supports most programming language
+- Decentralized channels like:
+  - conda-forge
+  - bioconda
+  - fastai
+
+</v-clicks>
+
 ---
 layout: image-right
 image: numpylogo.svg
