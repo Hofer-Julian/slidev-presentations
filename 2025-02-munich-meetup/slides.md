@@ -281,7 +281,6 @@ layout: two-cols
 
 <div class="max-w-xs">
 
-<v-click>
 
 ```bash
 pixi run hello --environment=py312
@@ -298,7 +297,6 @@ pixi run hello --environment=py312
            ||     ||
 ```
 
-</v-click>
 <v-click>
 
 ```bash
@@ -319,17 +317,26 @@ pixi run hello --environment=py313
 </v-click>
 
 
+
 </div>
 
 ::right::
 
+<v-click>
+
 `pixi.toml`
 
-<<< @/snippets/pixi-multi-env/pixi.toml {9-}{maxHeight: '250px'}
+<<< @/snippets/pixi-multi-env/pixi.toml toml {9-}{maxHeight: '250px'}
 
+</v-click>
+
+<v-click>
 
 `hello.py`
-<<< @/snippets/pixi-multi-env/hello.py
+
+<<< @/snippets/pixi-multi-env/hello.py python
+
+</v-click>
 
 ---
 
@@ -339,7 +346,7 @@ pixi run hello --environment=py313
 - 🔒 `pixi.lock`: whole dependency graph
 - 🎆 Fully reproducible setup
 
-<div class="mt-10">
+<div v-click class="mt-10">
 
 <<< @/snippets/pixi-multi-env/pixi.lock yaml {123-131}{lines: true, maxHeight: '250px'}
 
