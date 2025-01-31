@@ -389,12 +389,12 @@ tree -L 3 -a
 
 ```mermaid
 graph LR
-    subgraph Project 1
+    subgraph Workspace 1
         A[Environment: default] --> B[Global Cache for Shared Packages]
         C[Environment: py312] --> B
         E[Environment: py313] --> B
     end
-    subgraph Project 2
+    subgraph Workspace 2
         G[Environment: default] --> B
         I[Environment: dev] --> B
         K[Environment: lint] --> B
@@ -425,3 +425,61 @@ graph LR
   <img src="/languages/wasm/wasm-original.svg" alt="R">
   <img src="/languages/zig/zig-original-wordmark.svg" alt="Zig Wordmark">
 </div>
+
+
+---
+layout: image-right
+image: qgis.jpg
+backgroundSize: 28em
+---
+
+# Cross-language
+
+- 📝 Version-control with `git` (written in C)
+
+```bash
+pixi add git 
+```
+
+- 🐙 Manage GitHub repos with `gh` (written in Go)
+
+```bash
+pixi add gh
+```
+
+- 🌍 Inspect geo information with `QGIS` (written in C++)
+
+```bash
+pixi add qgis
+```
+
+---
+
+
+# Pixi global
+
+- 📦 `pixi add` adds dependencies to a workspace.
+- 🌍 `pixi global install` installs tools globally on your system.
+- 🛠️ Each tool is isolated in its own virtual environment.
+- 🚀 Improved support for GUIs coming soon!
+
+Usage:
+```bash
+pixi global install git gh qgis
+```
+
+<br/>
+
+
+```mermaid
+graph TB
+    A[git Environment] -->|git executable| D[Shared Folder in PATH]
+    B[gh Environment] -->|gh executable| D
+    C[qgis Environment] -->|qgis executable| D
+```
+
+
+
+---
+
+# Conclusion
