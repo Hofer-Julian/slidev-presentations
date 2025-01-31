@@ -47,7 +47,7 @@ layout: center
 layout: center
 ---
 
-# Do You Use Conda to Develop on Languages *Apart* from Python?
+# Do You Use Conda with Languages *Other* than Python?
 
 ---
 layout: image-right
@@ -321,13 +321,21 @@ pixi run hello --environment=py313
 
 <v-click>
 
+
 `pixi.toml`
 
-<<< @/snippets/pixi-multi-env/pixi.toml toml {9-}{maxHeight: '250px'}
+```toml
+[feature.py312.dependencies]
+python = "3.12.*"
 
-</v-click>
+[feature.py313.dependencies]
+python = "3.13.*"
 
-<v-click>
+[environments]
+py312 = ["py312"]
+py313 = ["py313"]
+```
+
 
 `hello.py`
 
@@ -479,6 +487,7 @@ graph TB
 layout: two-cols
 ---
 
+
 # Workspace & Source Dependencies
 
 - Experimental, soon to be stabilized
@@ -490,11 +499,16 @@ layout: two-cols
 
 ::right::
 
+<div class="flex justify-center">
+
 ```mermaid
-graph TD
+graph TB
     A[Python Application] -->|Depends on| B[C++ Application]
-    B -->|Change triggers recompilation| B
+    B --> C((Change triggers Recompilation))
+    C --> B
 ```
+
+</div>
 
 
 ---
