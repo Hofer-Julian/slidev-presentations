@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@iconify-json/mdi':
+        specifier: ^1.2.3
+        version: 1.2.3
+      '@iconify-json/uim':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@slidev/cli':
         specifier: ^51.0.1
         version: 51.0.1(@babel/parser@7.26.5)(@nuxt/kit@3.15.2(rollup@4.30.1))(@types/markdown-it@14.1.2)(@types/node@22.10.6)(@vue/compiler-sfc@3.5.13)(playwright-chromium@1.49.1)(postcss@8.5.1)(rollup@4.30.1)(tsx@4.19.2)
@@ -505,11 +511,17 @@ packages:
   '@iconify-json/carbon@1.2.5':
     resolution: {integrity: sha512-aI3TEzOrUDGhs74zIT3ym/ZQBUEziyu8JifntX2Hb4siVzsP5sQ/QEfVdmcCUj37kQUYT3TYBSeAw2vTfCJx9w==}
 
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
   '@iconify-json/ph@1.2.2':
     resolution: {integrity: sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw==}
 
   '@iconify-json/svg-spinners@1.2.2':
     resolution: {integrity: sha512-DIErwfBWWzLfmAG2oQnbUOSqZhDxlXvr8941itMCrxQoMB0Hiv8Ww6Bln/zIgxwjDvSem2dKJtap+yKKwsB/2A==}
+
+  '@iconify-json/uim@1.2.3':
+    resolution: {integrity: sha512-rCOU5nrRbcg5s5ZhL9Esoj/acyPeb6hPetVQYMJ18/wJwYsQtcwrFJXy6XOwyFs9TTLnjFGynLJO/TYihOQtDg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3466,11 +3478,19 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/ph@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 
   '@iconify-json/svg-spinners@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/uim@1.2.3':
     dependencies:
       '@iconify/types': 2.0.0
 

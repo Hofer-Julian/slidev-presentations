@@ -57,20 +57,15 @@ backgroundSize: 15em
 
 # What is Conda?
 
-- Cross-platform package ecosystem
-- Full support for binary packages
-
-<v-clicks>
-
-- Most commonly used for scientific Python
-  - Most science libraries have a C or Fortran core
-- Supports most programming language
-- Decentralized channels like:
+- 📦 Package ecosystem:
+  - Cross-platform
+  - Cross-language
+- 🔬 Commonly used for scientific Python
+- 🌐 Decentralized channels like:
   - conda-forge
   - bioconda
   - fastai
 
-</v-clicks>
 
 ---
 layout: image-right
@@ -137,15 +132,16 @@ layout: center
 
 <div class="w-lg">
 
-|                       | Conda | PyPI |
-|-----------------------|-------|------|
-| Official Python Index | ⚠️    | ✅   |
-| Binary Packages       | ✅    | ⚠️   |
-| Cross-Platform        | ✅    | ✅   |
-| Cross-Language        | ✅    | ⚠️   |
-| Decentralized         | ✅    | ⚠️   |
-| Traditional Package Manager | conda | pip  |
-| Modern Package Manager      | pixi  | uv   |
+| Feature                    | Conda | PyPI |
+|----------------------------|-------|------|
+| Official Python Index      | ⚠️    | ✅   |
+| Binary Packages            | ✅    | ⚠️   |
+| Cross-Platform             | ✅    | ✅   |
+| Cross-Language             | ✅    | ⚠️   |
+| Decentralized              | ✅    | ⚠️   |
+| Traditional Package Manager| conda | pip  |
+| Modern Package Manager     | pixi  | uv   |
+
 
 </div>
 
@@ -157,11 +153,11 @@ backgroundSize: 40em
 
 # Introducing Pixi
 
-- Workflow management
-- Multi-environments
-- Fast
-- Open-Source
-- Reproducible thanks to lock-files
+- 🛠️ Workflow management
+- 🌐 Multi-environments
+- ⚡ Fast
+- 🆓 Open-Source
+- 🔒 Reproducible thanks to lock-files
 
 
 
@@ -447,7 +443,7 @@ pixi add git
 pixi add gh
 ```
 
-- 🌍 Inspect geo information with `QGIS` (written in C++)
+- 🌍 Geoscience with `QGIS` (written in C++)
 
 ```bash
 pixi add qgis
@@ -480,6 +476,34 @@ graph TB
 
 
 
+# Conclusion
+
+- **Pixi**: Modern, fast, and reproducible package manager.
+- **Conda**: Cross-platform package manager for binary packages.
+- **Integration**: Robust development environment with Pixi and Conda.
+
+Thank you for your attention!
+
+---
+layout: end
 ---
 
-# Conclusion
+# Thank you for your attention!
+
+
+<div class="text-center mt-15">
+  <div class="flex justify-center mt-4">
+    <div class="mr-16">
+      <a href="https://www.linkedin.com/in/hofer-julian/" target="_blank">
+        <img src="/linkedin-qr-code.png" alt="LinkedIn QR Code" class="w-32 h-32">
+      </a>
+      <p class="mt-2"><mdi-linkedin /> LinkedIn</p>
+    </div>
+    <div class="ml-16">
+      <a href="https://discord.gg/mJfRpHJ9" target="_blank">
+        <img src="/discord-qr-code.png" alt="Discord QR Code" class="w-32 h-32">
+      </a>
+      <p class="mt-2"><mdi-discord /> Discord</p>
+    </div>
+  </div>
+</div>
