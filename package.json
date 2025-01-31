@@ -7,6 +7,7 @@
     "export": "esno scripts/picker.ts export"
   },
   "dependencies": {
+    "@iconify-json/file-icons": "^1.2.1",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/uim": "^1.2.3",
     "@slidev/cli": "^51.0.1",

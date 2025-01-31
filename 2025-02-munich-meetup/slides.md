@@ -67,6 +67,7 @@ backgroundSize: 15em
   - fastai
 
 
+
 ---
 layout: image-right
 image: numpylogo.svg
@@ -474,15 +475,40 @@ graph TB
     C[qgis Environment] -->|qgis executable| D
 ```
 
+---
+layout: two-cols
+---
 
+# Workspace & Source Dependencies
+
+- Experimental, soon to be stabilized
+- Build directly from source code
+- Manage multiple packages within your workspace
+- Useful for:
+  - big applications
+  - dependencies within one organization
+
+::right::
+
+```mermaid
+graph TD
+    A[Python Application] -->|Depends on| B[C++ Application]
+    B -->|Change triggers recompilation| B
+```
+
+
+---
+layout: image-right
+image: paxton-text-in-circle.svg
+backgroundSize: 30em
+---
 
 # Conclusion
 
-- **Pixi**: Modern, fast, and reproducible package manager.
-- **Conda**: Cross-platform package manager for binary packages.
-- **Integration**: Robust development environment with Pixi and Conda.
+- **Packaging** is difficult
+- **Conda**: Cross-platform & cross-language with decentralized channels
+- **Pixi**: Package and workflow manager, built on the Conda ecosystem
 
-Thank you for your attention!
 
 ---
 layout: end
