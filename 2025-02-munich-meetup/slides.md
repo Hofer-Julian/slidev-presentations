@@ -26,7 +26,7 @@ image: julian.jpg
 - 👤 Julian Hofer
 - ⚛️ Background in Physics
 - 💬 Thinks that languages are cool
-- 🤓 Loves to talk about package managers
+- 🤓 Loves to talk about dependency management
 
 ---
 layout: center
@@ -133,15 +133,14 @@ layout: center
 
 <div class="w-lg">
 
-| Feature                    | Conda | PyPI |
-|----------------------------|-------|------|
-| Official Python Index      | ⚠️    | ✅   |
-| Binary Packages            | ✅    | ⚠️   |
-| Cross-Platform             | ✅    | ✅   |
-| Cross-Language             | ✅    | ⚠️   |
-| Decentralized              | ✅    | ⚠️   |
-| Traditional Package Manager| conda | pip  |
-| Modern Package Manager     | pixi  | uv   |
+| Feature                    | Conda | PyPI        |
+|----------------------------|-------|-------------|
+| Official Python Index      | ⚠️    | ✅          |
+| Cross-Platform             | ✅    | ✅          |
+| Cross-Language             | ✅    | ⚠️          |
+| Decentralized              | ✅    | ⚠️          |
+| Traditional Package Manager| conda | pip (conda) |
+| Modern Package Manager     | pixi  | uv (pixi)   |
 
 
 </div>
@@ -154,13 +153,11 @@ backgroundSize: 40em
 
 # Introducing Pixi
 
-- 🛠️ Workflow management
-- 🌐 Multi-environments
 - ⚡ Fast
 - 🆓 Open-Source
+- 🛠️ Workflow management
+- 🌐 Multi-environments
 - 🔒 Reproducible thanks to lock-files
-
-
 
 ---
 layout: two-cols
@@ -485,6 +482,7 @@ graph TB
 
 ---
 layout: two-cols
+hide: true
 ---
 
 
@@ -519,10 +517,9 @@ backgroundSize: 30em
 
 # Conclusion
 
-- **Packaging** is difficult
+- **Dependency management** becomes easier with modern tools
 - **Conda**: Cross-platform & cross-language with decentralized channels
 - **Pixi**: Package and workflow manager, built on the Conda ecosystem
-
 
 ---
 layout: end
