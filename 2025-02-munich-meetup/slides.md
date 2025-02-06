@@ -530,13 +530,19 @@ layout: end
 
 <div class="text-center mt-15">
   <div class="flex justify-center mt-4">
-    <div class="mr-16">
+    <div class="mx-16">
+      <a href="https://pixi.sh/latest/" target="_blank">
+        <img src="/pixi-qr-code.png" alt="Pixi QR Code" class="w-32 h-32">
+      </a>
+      <p class="mt-2"> Pixi Website</p>
+    </div>
+    <div class="mx-16">
       <a href="https://www.linkedin.com/in/hofer-julian/" target="_blank">
         <img src="/linkedin-qr-code.png" alt="LinkedIn QR Code" class="w-32 h-32">
       </a>
       <p class="mt-2"><mdi-linkedin /> LinkedIn</p>
     </div>
-    <div class="ml-16">
+    <div class="mx-16">
       <a href="https://discord.gg/mJfRpHJ9" target="_blank">
         <img src="/discord-qr-code.png" alt="Discord QR Code" class="w-32 h-32">
       </a>
