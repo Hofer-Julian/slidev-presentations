@@ -1,0 +1,14 @@
+[project]
+authors = ["Julian Hofer <julianhofer@gnome.org>"]
+channels = ["conda-forge"]
+description = "Slidev presentations from Julian Hofer"
+name = "slidev-presentations"
+platforms = ["linux-64", "linux-aarch64", "win-64", "osx-arm64"]
+
+[tasks]
+install = "pnpm install"
+show = { cmd = ["pnpm", "run", "dev"], depends-on = ["install"] }
+
+[dependencies]
+pnpm = ">=10.6.5,<11"
+

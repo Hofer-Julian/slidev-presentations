@@ -7,3 +7,7 @@ index.html
 components.d.ts
 .vscode
 *.pdf
+
+# pixi environments
+.pixi
+*.egg-info
