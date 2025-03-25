@@ -2,8 +2,8 @@
 
 To start the slide show:
 
-- `pnpm install`
-- `pnpm run dev`
+- `pixi run pnpm install`
+- `pixi run pnpm run dev`
 - visit http://localhost:3030
 
 Edit the `slides.md` to see the changes.
