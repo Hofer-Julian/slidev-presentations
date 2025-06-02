@@ -1,0 +1,7 @@
+[package]
+edition = "2024"
+name = "geos-rs"
+version = "0.1.0"
+
+[dependencies]
+geos = "10.0"

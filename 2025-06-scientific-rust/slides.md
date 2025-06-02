@@ -58,98 +58,13 @@ backgroundSize: 20em
 
 # Cargo is Not Enough
 
-- Strengths
-  - Speed
-  - Thread safety
-  - Memory safety
+- No task runner
+  - External tools are needed for pipelines
+- No easy way to depend on libraries not written in Rust
+  - Compile them yourself in `build.rs` (where does the compiler come from though?)
+  - Rewrite in Rust (not feasible for many projects)
+  - Use external tool 
 
-<v-click>
-
-- Weaknesses:
-  - Steep learning curve
-  - Lack of high quality libraries
-  - Difficult to depend on libraries *not* written in Rust
-
-</v-click>
-
-
-
----
-layout: image-right
-image: numpylogo.svg
-backgroundSize: 30em
----
-
-# Installing NumPy via Pip
-
-From the NumPy contributor docs:
-
-
-- Install NumPy as a user:
-
-```bash
-pip install numpy
-```
-
-<div v-click>
-
-- Install NumPy as a developer:
-
-```bash
-# Debian
-sudo apt build-dep numpy
-# Fedora
-sudo dnf builddep numpy
-# Arch
-sudo pacman -S gcc-fortran openblas pkgconf
-# macOS
-brew install openblas pkg-config gfortran
-```
-Finally
-```bash
-pip install . --no-build-isolation
-```
-</div>
-
----
-layout: image-right
-image: numpylogo.svg
-backgroundSize: 30em
----
-
-# Installing NumPy via Conda
-
-From the NumPy contributor docs:
-> If you are using Conda, you can skip the steps in this section - with the exception of installing compilers for Windows or the Apple Developer Tools for macOS. All other dependencies will be installed automatically [...] 
-
-
-```bash
-conda env create -f environment.yml
-
-# or
-pixi init --import environment.yml
-```
-
-
----
-layout: center
----
-
-# Ecosystem Comparison
-
-<div class="w-lg">
-
-| Feature                    | Conda | PyPI        |
-|----------------------------|-------|-------------|
-| Official Python Index      | ⚠️    | ✅          |
-| Cross-Platform             | ✅    | ✅          |
-| Cross-Language             | ✅    | ⚠️          |
-| Decentralized              | ✅    | ⚠️          |
-| Traditional Package Manager| conda | pip (conda) |
-| Modern Package Manager     | pixi  | uv (pixi)   |
-
-
-</div>
 
 ---
 layout: image-right
@@ -159,11 +74,93 @@ backgroundSize: 40em
 
 # Introducing Pixi
 
-- ⚡ Fast
-- 🆓 Open-Source
+- 📦 Conda package ecosystem:
+  - Cross-platform (Windows, macOS, Linux, ...)
+  - Cross-language (C, C++, Fortran, Python, ...)
+- ⚡ Fast & Open Source
 - 🛠️ Workflow management
 - 🌐 Multi-environments
 - 🔒 Reproducible thanks to lock-files
+
+---
+layout: two-cols
+---
+
+# Pixi Workflow
+
+<div>
+
+`Cargo.toml`
+
+<<< @/snippets/geos-rs-initial/Cargo.toml toml
+
+</div>
+
+
+`main.rs`
+
+<<< @/snippets/geos-rs-initial/src/main.rs rs
+
+
+::right::
+
+<v-click>
+
+`pixi.toml`
+
+<<< @/snippets/geos-rs-initial/pixi.toml toml
+
+</v-click>
+
+<v-click>
+
+
+```console
+$ pixi run start
+
+thread 'main' panicked at geos-sys-2.0.6/build.rs:137:13:
+Could not detect GEOS using pkg-config or geos-config
+```
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+# Pixi Workflow
+
+<div>
+
+`Cargo.toml`
+
+<<< @/snippets/geos-rs-final/Cargo.toml toml
+
+</div>
+
+
+`main.rs`
+
+<<< @/snippets/geos-rs-final/src/main.rs rs
+
+
+::right::
+
+
+`pixi.toml`
+
+<<< @/snippets/geos-rs-final/pixi.toml toml {8-11}
+
+
+
+```console
+$ pixi run start
+
+Area : 25
+```
+
+
+
 
 ---
 layout: image-right
@@ -173,8 +170,8 @@ backgroundSize: 30em
 
 # Conclusion
 
-- **Dependency management** becomes easier with modern tools
-- **Conda**: Cross-platform & cross-language with decentralized channels
+- **Scientific Rust** needs more than just Cargo
+- **Conda ecosystem**: Provides binary packages for multiple platforms and programming languages
 - **Pixi**: Package and workflow manager, built on the Conda ecosystem
 
 ---
