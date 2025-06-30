@@ -16,7 +16,8 @@ title: Unlocking Hidden Power of Conda with Pixi
 By Prefix.dev GmbH
 
 ---
-layout: two-cols
+layout: image-right
+image: team.jpg
 ---
 
 # About Us 
@@ -565,7 +566,7 @@ layout: end
       <p class="mt-2"> Pixi Website</p>
     </div>
     <div class="mx-16">
-      <a href="https://www.linkedin.com/in/hofer-julian/" target="_blank">
+      <a href="https://www.linkedin.com/company/prefix-dev/posts/?feedView=all" target="_blank">
         <img src="/linkedin-qr-code.png" alt="LinkedIn QR Code" class="w-32 h-32">
       </a>
       <p class="mt-2"><mdi-linkedin /> LinkedIn</p>
