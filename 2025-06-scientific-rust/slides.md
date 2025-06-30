@@ -45,8 +45,8 @@ backgroundSize: 20em
 
 - Weaknesses:
   - Steep learning curve
-  - Lack of high quality libraries
   - Difficult to depend on libraries *not* written in Rust
+  - Lack of high quality libraries
 
 </v-click>
 
@@ -60,11 +60,13 @@ backgroundSize: 20em
 
 - No task runner
   - External tools are needed for pipelines
-- No easy way to depend on libraries not written in Rust
-  - Compile them yourself in `build.rs` (where does the compiler come from though?)
+- No easy way to depend on scientific libraries
   - Rewrite in Rust (not feasible for many projects)
+  - Compile them yourself in `build.rs`
+    - Where does the compiler come from?
+  - Detect the library on your system in `build.rs`
+    - Where does the library come from?
   - Use external tool 
-
 
 ---
 layout: image-right
