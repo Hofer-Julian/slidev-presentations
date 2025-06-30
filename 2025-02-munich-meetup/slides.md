@@ -391,8 +391,11 @@ tree -L 3 -a
 
 ```mermaid
 graph LR
+    subgraph Cache
+        B[Global Cache for Shared Packages]
+    end
     subgraph Workspace 1
-        A[Environment: default] --> B[Global Cache for Shared Packages]
+        A[Environment: default] --> B
         C[Environment: py312] --> B
         E[Environment: py313] --> B
     end
