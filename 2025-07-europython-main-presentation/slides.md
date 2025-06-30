@@ -13,23 +13,22 @@ title: Unlocking Hidden Power of Conda with Pixi
 ---
 
 <h1 style="color: var(--slidev-theme-primary)">Unlocking Hidden Power of Conda with Pixi</h1>
+By Prefix.dev GmbH
 
 ---
-layout: image-right
-image: julian.jpg
+layout: two-cols
 ---
 
-# About Me ⚠️⚠️
+# About Us 
 
-- 👤 Julian Hofer
-- ⚛️ Background in Physics
-- 💬 Thinks that languages are cool
-- 🤓 Loves to talk about dependency management
+- 📦 Focused on solving Package Management
+- 🚀 Startup, 2.5 years old
+- 🌐 Fully remote, spread around Europe
+- 🐍 Dedicated to make the conda ecosystem amazing!
+- 🦀 Everything in Rust
 
 ---
-layout: image-right
-image: conda.png
-backgroundSize: 15em
+layout: two-cols
 ---
 
 # What is Conda?
@@ -39,11 +38,17 @@ backgroundSize: 15em
   - Cross-language
 - 🔬 Commonly used for scientific Python
 - 🌐 Decentralized channels like:
-  - conda-forge
-  - bioconda
-  - fastai
+  - conda-forge: Most popular channel
+  - bioconda: Seperatly managed channel for bioinformatics
+  - RoboStack: Automated channel for robotics
+- Prefix.dev GmbH: revolutionizing the conda ecosystem
 
+::right::
 
+<div class="flex flex-col items-center w-full">
+  <img src="./conda.png" alt="conda logo" class="w-56 max-w-full h-auto mb-6" />
+  <img src="./conda-forge-logo-dark.svg" alt="conda-forge logo" class="w-56 max-w-full h-auto" />
+</div>
 
 ---
 layout: image-right
@@ -62,7 +67,7 @@ From the NumPy contributor docs:
 pip install numpy
 ```
 
-<div v-click>
+<v-click>
 
 - Install NumPy as a developer:
 
@@ -80,7 +85,7 @@ Finally
 ```bash
 pip install . --no-build-isolation
 ```
-</div>
+</v-click>
 
 ---
 layout: image-right
@@ -91,7 +96,7 @@ backgroundSize: 30em
 # Installing NumPy via Conda
 
 From the NumPy contributor docs:
-> If you are using Conda, you can skip the steps in this section - with the exception of installing compilers for Windows or the Apple Developer Tools for macOS. All other dependencies will be installed automatically [...] 
+> If you are using conda, you can skip the steps in this section - with the exception of installing compilers for Windows or the Apple Developer Tools for macOS. All other dependencies will be installed automatically [...] 
 
 
 ```bash
@@ -114,6 +119,7 @@ backgroundSize: 40em
 - 🛠️ Workflow management
 - 🌐 Multi-environments
 - 🔒 Reproducible thanks to lock-files
+- 🐍 Supports conda **and** PyPI ecosystem
 
 ---
 layout: center
@@ -123,7 +129,7 @@ layout: center
 
 <div class="w-lg">
 
-| Feature                    | Conda | PyPI        |
+| Feature                    | conda | PyPI        |
 |----------------------------|-------|-------------|
 | Official Python Index      | ⚠️    | ✅          |
 | Cross-Platform             | ✅    | ✅          |
@@ -136,15 +142,40 @@ layout: center
 </div>
 
 ---
+layout: two-cols
+---
 
 # What About `uv`?
 Or `hatch`, `poetry`, ...
 
-- Some
-- points
-- to
-- be
-- made
+- 💛 Amazing tool, highly appreciate their work.
+- Pixi supports PyPI by integrating `uv`.
+- Like `pixi`, `uv` uses the workspace model.
+- Support both by using `pyproject.toml`.
+
+::right::
+
+`pyproject.toml`
+```toml {*}{lines: true}
+[project]
+name = "my-project"
+version = "0.1.0"
+dependencies = [
+    "matplotlib",
+    "numpy",
+]
+
+[tool.pixi]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64", "win-64"]
+```
+
+`Terminal`
+```bash
+pixi run python -c "import matplotlib; import numpy"
+# or
+uv run python -c "import matplotlib; import numpy"
+```
 
 ---
 layout: two-cols
@@ -451,10 +482,9 @@ pixi add qgis
 
 ---
 
-
 # Pixi global
 
-- 📦 Install applications where you'd otherwise use `apt`, `brew` or `winget`
+- 📦 Replace `apt`, `brew` or `winget` with `pixi`. 
 - ➕ `pixi add` adds dependencies to a workspace.
 - 🌍 `pixi global install` installs tools globally on your system.
 - 🛠️ Each tool is isolated in its own virtual environment.
@@ -516,8 +546,8 @@ backgroundSize: 30em
 # Conclusion
 
 - **Dependency management** becomes easier with modern tools
-- **Conda**: Cross-platform & cross-language with decentralized channels
-- **Pixi**: Package and workflow manager, built on the Conda ecosystem
+- **conda**: Cross-platform & cross-language with decentralized channels
+- **Pixi**: Package and workflow manager, built on the conda ecosystem
 
 ---
 layout: end
