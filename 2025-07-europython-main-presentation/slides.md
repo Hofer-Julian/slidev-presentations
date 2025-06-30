@@ -42,6 +42,7 @@ layout: two-cols
   - conda-forge: Most popular channel
   - bioconda: Seperatly managed channel for bioinformatics
   - RoboStack: Automated channel for robotics
+- Gifted to the community by Anaconda, Inc.
 - Prefix.dev GmbH: revolutionizing the conda ecosystem
 
 ::right::
@@ -49,6 +50,7 @@ layout: two-cols
 <div class="flex flex-col items-center w-full">
   <img src="./conda.png" alt="conda logo" class="w-56 max-w-full h-auto mb-6" />
   <img src="./conda-forge-logo-dark.svg" alt="conda-forge logo" class="w-56 max-w-full h-auto" />
+  <img src="./logo_light_no_text.svg" alt="Prefix.dev logo" class="w-56 max-w-full h-auto mt-6" />
 </div>
 
 ---
@@ -96,7 +98,8 @@ backgroundSize: 30em
 
 # Installing NumPy via Conda
 
-From the NumPy contributor docs:
+> From the **NumPy** contributor docs:
+>
 > If you are using conda, you can skip the steps in this section - with the exception of installing compilers for Windows or the Apple Developer Tools for macOS. All other dependencies will be installed automatically [...] 
 
 
@@ -166,7 +169,7 @@ dependencies = [
     "numpy",
 ]
 
-[tool.pixi]
+[tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["linux-64", "osx-arm64", "win-64"]
 ```
