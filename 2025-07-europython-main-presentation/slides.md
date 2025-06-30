@@ -123,7 +123,7 @@ backgroundSize: 40em
 - 🛠️ Workflow management
 - 🌐 Multi-environments
 - 🔒 Reproducible thanks to lock-files
-- 🐍 Supports conda **and** PyPI ecosystem
+- 🐍 Supports conda and PyPI ecosystem
 
 ---
 layout: center
@@ -213,7 +213,7 @@ pixi run python hello.py
 
 ```
  ______________ 
-< Hello Munich >
+< Hello All >
  -------------- 
      \   ^__^
       \  (oo)\_______
@@ -270,7 +270,7 @@ pixi run hello
 
 ```
  ______________ 
-< Hello Munich >
+< Hello All >
  -------------- 
      \   ^__^
       \  (oo)\_______
@@ -286,7 +286,8 @@ pixi run hello
 ::right::
 
 `pixi.toml`
-<<< @/snippets/pixi-task-add/pixi.toml {6-7}
+
+<<< @/snippets/pixi-task-add/pixi.toml toml {6-7} {lines: true, maxHeight: '250px'}
 
 
 ---
@@ -294,9 +295,8 @@ layout: two-cols
 ---
 
 # Multiple Environments
-
 <div class="max-w-xs">
-
+<v-click>
 
 ```bash
 pixi run hello --environment=py312
@@ -312,7 +312,7 @@ pixi run hello --environment=py312
            ||----w |
            ||     ||
 ```
-
+</v-click>
 <v-click>
 
 ```bash
@@ -332,39 +332,48 @@ pixi run hello --environment=py313
 
 </v-click>
 
-
-
 </div>
 
 ::right::
 
-<v-click>
-
-
 `pixi.toml`
-
-```toml
-[feature.py312.dependencies]
-python = "3.12.*"
-
-[feature.py313.dependencies]
-python = "3.13.*"
-
-[environments]
-py312 = ["py312"]
-py313 = ["py313"]
-```
-
+<<< @/snippets/pixi-multi-env/pixi.toml toml {12-21}{maxHeight: '10em'}
 
 `hello.py`
 
 <<< @/snippets/pixi-multi-env/hello.py python
 
-</v-click>
-
+---
+layout: two-cols
 ---
 
 # Pixi Build
+👷 Under construction
+
+- 🏗️ Build your own conda packages directly from a `pixi.toml` or `pyproject.toml`
+- 🐍 Using the build-backend principle like PyPI
+- 🛠️ Support multi language monorepos
+- 📦 Build and publish to custom channels
+
+::right::
+
+`pixi.toml`
+
+```toml {5-14}{lines: true}
+[workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[dependencies]
+package-name = { path = "." }
+
+[package]
+name = "package-name"
+version = "0.1.0"
+
+[package.build]
+backend = "pixi-build-python"
+```
 
 ---
 
