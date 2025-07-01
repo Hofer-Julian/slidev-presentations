@@ -11,15 +11,15 @@
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/uim": "^1.2.3",
     "@slidev/cli": "^51.0.1",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
     "@types/node": "^22.10.6",
     "@types/prompts": "^2.4.9",
-    "esno": "^4.0.0",
+    "esno": "^4.8.0",
     "execa": "^9.5.2",
-    "playwright-chromium": "^1.40.0",
+    "playwright-chromium": "^1.49.1",
     "prompts": "^2.4.2",
-    "typescript": "^5.3.2"
+    "typescript": "^5.7.3"
   },
   "name": "slidev-presentations"
 }
