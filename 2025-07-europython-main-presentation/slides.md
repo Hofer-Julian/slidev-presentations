@@ -553,15 +553,33 @@ graph TB
 # Projects using Pixi
 
 <div class="grid grid-cols-3 gap-4 mt-4">
-  <img src="./holoviews-logo.png" alt="HoloViews" class="max-h-24 mx-auto object-contain" />
-  <img src="/usgs-logo.png" alt="U.S. Geological Survey" class="max-h-24 mx-auto object-contain" />
-  <img src="./onnx-logo.png" alt="Onnx" class="max-h-24 mx-auto object-contain" />
-  <img src="./deltares-logo.jpg" alt="Deltares" class="max-h-24 mx-auto object-contain" />
-  <img src="./jupyter-logo.png" alt="Jupyter" class="max-h-24 mx-auto object-contain" />
-  <img src="./mojo-logo.jpg" alt="Modular (Mojo 🔥)" class="max-h-24 mx-auto object-contain" />
-  <img src="./rerun-io-logo.png" alt="Rerun" class="max-h-24 mx-auto object-contain" />
-  <img src="./quantco-logo.png" alt="Quantco" class="max-h-24 mx-auto object-contain" />
-  <img src="./freecad-logo.svg" alt="FreeCAD" class="max-h-24 mx-auto object-contain" />
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./holoviews-logo.png" alt="HoloViews" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="/usgs-logo.png" alt="U.S. Geological Survey" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./onnx-logo.png" alt="Onnx" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./deltares-logo.jpg" alt="Deltares" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./jupyter-logo.png" alt="Jupyter" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./mojo-logo.png" alt="Modular (Mojo 🔥)" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./rerun-io-logo.png" alt="Rerun" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./quantco-logo.png" alt="Quantco" class="max-h-24 mx-auto object-contain" />
+  </div>
+  <div class="bg-black rounded-xl p-4 flex items-center justify-center">
+    <img src="./freecad-logo.svg" alt="FreeCAD" class="max-h-24 mx-auto object-contain" />
+  </div>
 </div>
 
 ---
