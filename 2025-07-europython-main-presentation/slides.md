@@ -48,10 +48,12 @@ layout: two-cols
 ::right::
 
 <div class="flex flex-col items-center w-full">
-  <img src="./conda.png" alt="conda logo" class="w-56 max-w-full h-auto mb-6" />
-  <img src="./conda-forge-logo-dark.svg" alt="conda-forge logo" class="w-56 max-w-full h-auto" />
-  <img src="./logo_light_no_text.svg" alt="Prefix.dev logo" class="w-56 max-w-full h-auto mt-6" />
-</div>
+  <div class="relative w-[28rem] h-[22rem] mx-auto">
+    <img src="./conda.png" alt="conda logo" class="absolute left-0 top-0 w-44 h-44" style="transform: translate(0, 0);" />
+    <img src="./conda-forge-logo-dark.svg" alt="conda-forge logo" class="absolute right-0 top-0 w-44 h-44" style="transform: translate(0, 0);" />
+    <img src="./logo_light_no_text.svg" alt="Prefix.dev logo" class="absolute left-1/2 bottom-0 w-44 h-44" style="transform: translate(-50%, 0);" />
+  </div>
+  </div>
 
 ---
 layout: image-right
