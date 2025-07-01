@@ -359,7 +359,7 @@ layout: two-cols
 
 ::right::
 
-`pixi.toml`
+`pixi.toml` (or `pyproject.toml`)
 
 ```toml {5-14}{lines: true}
 [workspace]
@@ -429,7 +429,8 @@ tree -L 3 -a
 ```mermaid
 graph LR
     subgraph Cache
-        B[Global Cache for Shared Packages]
+        B[Global Cache
+        for Shared Packages]
     end
     subgraph Workspace 1
         A[Environment: default] --> B
@@ -549,20 +550,35 @@ graph TB
 
 ---
 
-# Projects using our stuff
+# Projects using Pixi
 
+<div class="grid grid-cols-3 gap-4 mt-4">
+  <img src="./holoviews-logo.png" alt="HoloViews" class="max-h-24 mx-auto object-contain" />
+  <img src="/usgs-logo.png" alt="U.S. Geological Survey" class="max-h-24 mx-auto object-contain" />
+  <img src="./onnx-logo.png" alt="Onnx" class="max-h-24 mx-auto object-contain" />
+  <img src="./deltares-logo.jpg" alt="Deltares" class="max-h-24 mx-auto object-contain" />
+  <img src="./jupyter-logo.png" alt="Jupyter" class="max-h-24 mx-auto object-contain" />
+  <img src="./mojo-logo.jpg" alt="Modular (Mojo 🔥)" class="max-h-24 mx-auto object-contain" />
+  <img src="./rerun-io-logo.png" alt="Rerun" class="max-h-24 mx-auto object-contain" />
+  <img src="./quantco-logo.png" alt="Quantco" class="max-h-24 mx-auto object-contain" />
+  <img src="./freecad-logo.svg" alt="FreeCAD" class="max-h-24 mx-auto object-contain" />
+</div>
 
 ---
 layout: image-right
 image: paxton-text-in-circle.svg
 backgroundSize: 30em
+zoom: 1.2
 ---
 
 # Conclusion
 
-- **Dependency management** becomes easier with modern tools
-- **conda**: Cross-platform & cross-language with decentralized channels
-- **Pixi**: Package and workflow manager, built on the conda ecosystem
+- Modernize your workflow
+  - Reproducible
+  - Fast
+  - Cross language
+- One tool for all your development needs
+- Free & Open-Source
 
 ---
 layout: end
