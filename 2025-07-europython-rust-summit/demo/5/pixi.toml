@@ -1,0 +1,26 @@
+[workspace]
+authors = ["Julian Hofer <julianhofer@gnome.org>"]
+channels = [
+    "https://prefix.dev/pixi-build-backends",
+    "https://prefix.dev/conda-forge",
+]
+name = "fast_math"
+platforms = ["linux-64"]
+version = "0.1.0"
+preview = ["pixi-build"]
+
+[tasks]
+start = 'python -c "import fast_math; fast_math.main()"'
+
+[dependencies]
+fast_math = { path = "." }
+
+[package.build.backend]
+name = "pixi-build-python"
+version = "*"
+
+[package.build-dependencies]
+rust = "*"
+
+[package.host-dependencies]
+maturin = "*"
