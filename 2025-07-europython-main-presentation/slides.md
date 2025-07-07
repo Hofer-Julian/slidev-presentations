@@ -199,7 +199,7 @@ pixi init demo
 
 Adding `cowpy` and `python`
 ```bash
-pixi add cowpy python
+pixi add cowpy
 ```
 
 </v-click>
@@ -210,7 +210,7 @@ pixi add cowpy python
 Running a task
 
 ```bash
-pixi run python hello.py
+pixi run python -m demo
 ```
 
 ```
@@ -230,20 +230,20 @@ pixi run python hello.py
 
 ::right::
 
-`pixi.toml`
+`pyproject.toml`
 ````md magic-move {at: 1}
 
-<<< @/snippets/pixi-init/pixi.toml
+<<< @/snippets/pixi-init/pyproject.toml
 
-<<< @/snippets/pixi-deps-add/pixi.toml {8-10}
+<<< @/snippets/pixi-deps-add/pyproject.toml {9-9}
 
 ````
 
 <v-click at="2">
 
-`hello.py`
+`demo/__main__.py`
 
-<<< @/snippets/pixi-deps-add/hello.py python
+<<< @/snippets/pixi-deps-add/demo/__main__.py python
 
 
 </v-click>
@@ -287,9 +287,9 @@ pixi run hello
 
 ::right::
 
-`pixi.toml`
+`pyproject.toml`
 
-<<< @/snippets/pixi-task-add/pixi.toml toml {6-7} {lines: true, maxHeight: '250px'}
+<<< @/snippets/pixi-task-add/pyproject.toml toml {15-16} {lines: true, maxHeight: '250px'}
 
 
 ---
@@ -301,7 +301,7 @@ layout: two-cols
 <v-click>
 
 ```bash
-pixi run hello --environment=py312
+pixi run --environment py312 hello
 ```
 
 ```
@@ -318,7 +318,7 @@ pixi run hello --environment=py312
 <v-click>
 
 ```bash
-pixi run hello --environment=py313
+pixi run --environment py313 hello
 ```
 
 ```
@@ -338,12 +338,12 @@ pixi run hello --environment=py313
 
 ::right::
 
-`pixi.toml`
-<<< @/snippets/pixi-multi-env/pixi.toml toml {12-21}{maxHeight: '10em'}
+`pyproject.toml`
+<<< @/snippets/pixi-multi-env/pyproject.toml toml {18-26}{maxHeight: '10em'}
 
-`hello.py`
+`demo/__main__.py`
 
-<<< @/snippets/pixi-multi-env/hello.py python
+<<< @/snippets/pixi-multi-env/demo/__main__.py python
 
 ---
 layout: two-cols
@@ -359,21 +359,25 @@ layout: two-cols
 
 ::right::
 
-`pixi.toml` (or `pyproject.toml`)
+`pyproject.toml`
 
-```toml {5-14}{lines: true}
-[workspace]
-channels = ["conda-forge"]
-platforms = ["win-64", "linux-64", "osx-arm64"]
-
-[dependencies]
-package-name = { path = "." }
-
-[package]
+```toml {9-17}{lines: true}
+[project]
 name = "package-name"
 version = "0.1.0"
 
-[package.build]
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+package-name = { path = "." }
+
+[tool.pixi.package]
+name = "package-name"
+version = "0.1.0"
+
+[tool.pixi.package.build]
 backend = "pixi-build-python"
 ```
 
@@ -381,7 +385,7 @@ backend = "pixi-build-python"
 
 # Lock file
 
-- 👐 `pixi.toml`: direct dependencies
+- 👐 `pyproject.toml`: direct dependencies
 - 🔒 `pixi.lock`: whole dependency graph
 - 🎆 Fully reproducible setup
 
@@ -409,7 +413,8 @@ tree -L 3 -a
 .
 ├── .gitattributes
 ├── .gitignore
-├── hello.py
+├── demo
+│   └── __main__.py
 ├── .pixi
 │   ├── envs
 │   │   ├── default
@@ -417,7 +422,7 @@ tree -L 3 -a
 │   │   └── py313
 │   └── .gitignore
 ├── pixi.lock
-└── pixi.toml
+└── pyproject.toml
 ```
 
 </div>
@@ -614,7 +619,7 @@ layout: end
       <p class="mt-2"> Pixi Website</p>
     </div>
     <div class="mx-16">
-      <a href="https://www.linkedin.com/company/prefix-dev/posts/?feedView=all" target="_blank">
+      <a href="https://www.linkedin.com/company/prefix-dev" target="_blank">
         <img src="/linkedin-qr-code.png" alt="LinkedIn QR Code" class="w-32 h-32">
       </a>
       <p class="mt-2"><mdi-linkedin /> LinkedIn</p>
