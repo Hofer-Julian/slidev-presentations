@@ -11,3 +11,6 @@ components.d.ts
 # pixi environments
 .pixi
 *.egg-info
+*.pyc
+target
+*.so
