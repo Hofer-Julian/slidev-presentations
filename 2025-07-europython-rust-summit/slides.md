@@ -20,10 +20,9 @@ With Pixi
 - Question to the audience: Why do we like Python?
 - `pixi global install python`
 - Run Python interpreter
-- Move to File
-- Want to add `cowpy`, so move to manifest & lockfile
+- Move to File (no manifest yet)
+- Want to add `cowpy`, so move to manifest & lockfile. Also add task
 - Question to the audience: Why is manifest & lockfile a good thing?
-- Introduce task
 - Move to Pixi package
 - How to make it fast? Port `add` function to Rust!
 - Show that it rebuilds automatically when you modify Rust code

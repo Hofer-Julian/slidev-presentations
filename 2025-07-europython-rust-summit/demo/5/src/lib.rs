@@ -1,14 +1,14 @@
 use pyo3::prelude::*;
 
-/// Formats the sum of two numbers as string.
+/// Add two numbers.
 #[pyfunction]
-fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
-    Ok((a + b + 23).to_string())
+fn add(a: usize, b: usize) -> PyResult<usize> {
+    Ok(a + b)
 }
 
 /// A Python module implemented in Rust.
 #[pymodule]
-fn fast_math(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
+fn math_demo(m: &Bound<'_, PyModule>) -> PyResult<()> {
+    m.add_function(wrap_pyfunction!(add, m)?)?;
     Ok(())
 }
