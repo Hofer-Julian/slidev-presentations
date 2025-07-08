@@ -15,17 +15,6 @@ title: Unlocking Hidden Power of Conda with Pixi
 <h1 style="color: var(--slidev-theme-primary)">How to Build Python & Rust Packages</h1>
 With Pixi
 
----
-
-- Question to the audience: Why do we like Python?
-- `pixi global install python`
-- Run Python interpreter
-- Move to File (no manifest yet)
-- Want to add `cowpy`, so move to manifest & lockfile. Also add task
-- Question to the audience: Why is manifest & lockfile a good thing?
-- Move to Pixi package
-- How to make it fast? Port `add` function to Rust!
-- Show that it rebuilds automatically when you modify Rust code
 
 ---
 layout: image-right
