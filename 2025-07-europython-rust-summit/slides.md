@@ -63,10 +63,14 @@ backgroundSize: 40em
 - 🐍 Supports conda and PyPI ecosystem
 
 ---
-layout: cover
----
 
-<h1 style="color: var(--slidev-theme-primary)">Demo Time</h1>
+# Demo Time
+
+- Interactive Python
+- Put code into a file
+- Manage dependencies & tasks with Pixi manifest
+- Organize code as package
+- Add Rust to the mix
 
 
 
