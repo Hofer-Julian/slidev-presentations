@@ -9,7 +9,7 @@ fonts:
 colorSchema: dark
 themeConfig:
   primary: "#facc15"
-title: Unlocking Hidden Power of Conda with Pixi
+title: How to Build Python & Rust Packages With Pixi
 ---
 
 <h1 style="color: var(--slidev-theme-primary)">How to Build Python & Rust Packages</h1>
