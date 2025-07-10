@@ -30,3 +30,4 @@ rust = "*"
 
 [package.host-dependencies]
 maturin = "*"
+python = "3.11.*"
