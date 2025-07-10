@@ -6,9 +6,7 @@ platforms = ["linux-64", "osx-arm64", "win-64"]
 
 [dependencies]
 python = "3.11.*"
-
-[pypi-dependencies]
-cowpy = { git = "https://github.com/jeffbuttars/cowpy.git" }
+cowpy = "*"
 
 [tasks]
 start = "python math_demo.py"
