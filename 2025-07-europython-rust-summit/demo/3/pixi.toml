@@ -11,7 +11,7 @@ start = "python -m math_demo"
 
 [dependencies]
 math_demo = { path = "." }
-python = "*"
+python = "3.11.*"
 cowpy = "*"
 
 [package]
