@@ -130,86 +130,8 @@ backgroundSize: 40em
 - 🐍 Supports conda and PyPI ecosystem
 
 
----
-layout: default
-zoom: 1.5
----
-# Building a Python library in Rust?
-
-<div class="max-w-xl items-center">
-
-```shell
-➜ pixi add python rust
-```
-```
-✔ Added python >=3.13.5,<3.14
-✔ Added rust >=1.88.0,<1.89
-```
-</div>
-
----
-layout: default
-zoom: 1.5
----
-# Building a Python library in C++?
-
-<div class="max-w-xl items-center">
-
-```shell
-➜ pixi add python cxx-compiler cmake
-```
-```
-✔ Added python >=3.13.5,<3.14
-✔ Added cxx-compiler >=1.10.0,<2
-✔ Added cmake >=4.0.3,<5
-```
-</div>
 
 
----
-layout: image-right
-image: qgis.jpg
-backgroundSize: 28em
----
-
-# Cross-language
-
-- 📝 Version-control with `git` (written in C)
-
-```bash
-pixi add git 
-```
-
-- 🐙 Manage GitHub repos with `gh` (written in Go)
-
-```bash
-pixi add gh
-```
-
-- 🌍 Geoscience with `QGIS` (written in C++)
-
-```bash
-pixi add qgis
-```
-
----
-layout: default
-zoom: 1.5
----
-# Sharing it with others?
-
-<div class="max-w-xl items-center">
-
-```shell
-➜ git clone https://github.com/user/repo.git
-➜ cd repo
-➜ pixi run python -VV 
-```
-```
-Python 3.13.5 | packaged by conda-forge 
-```
-
-</div>
 
 ---
 layout: two-cols
@@ -487,6 +409,84 @@ graph LR
 ```
 
 </v-click>
+
+
+---
+
+<div class="grid grid-cols-6 gap-4 mt-4">
+  <img src="/languages/c/c-original.svg" alt="C">
+  <img src="/languages/cplusplus/cplusplus-original.svg" alt="C++">
+  <img src="/languages/csharp/csharp-original.svg" alt="C#">
+  <img src="/languages/fortran/fortran-original.svg" alt="F">
+  <img src="/languages/go/go-original.svg" alt="Go">
+  <img src="/languages/haskell/haskell-original.svg" alt="Haskell">
+  <img src="/languages/java/java-original-wordmark.svg" alt="Java Wordmark">
+  <img src="/languages/javascript/javascript-original.svg" alt="JavaScript">
+  <img src="/languages/kotlin/kotlin-original.svg" alt="Kotlin">
+  <img src="/languages/lua/lua-original.svg" alt="Lua">
+  <img src="/languages/nodejs/nodejs-original-wordmark.svg" alt="Node.js Wordmark">
+  <img src="/languages/php/php-original.svg" alt="PHP">
+  <img src="/languages/python/python-original.svg" alt="Python">
+  <img src="/languages/r/r-original.svg" alt="R">
+  <img src="/languages/rust/rust-original.svg" alt="Rust">
+  <img src="/languages/typescript/typescript-original.svg" alt="TS">
+  <img src="/languages/wasm/wasm-original.svg" alt="R">
+  <img src="/languages/zig/zig-original-wordmark.svg" alt="Zig Wordmark">
+</div>
+
+
+---
+layout: image-right
+image: qgis.jpg
+backgroundSize: 28em
+---
+
+# Cross-language
+
+- 📝 Version-control with `git` (written in C)
+
+```bash
+pixi add git 
+```
+
+- 🐙 Manage GitHub repos with `gh` (written in Go)
+
+```bash
+pixi add gh
+```
+
+- 🌍 Geoscience with `QGIS` (written in C++)
+
+```bash
+pixi add qgis
+```
+
+
+
+---
+
+# Pixi global
+
+- 📦 Replace `apt`, `brew` or `winget` with `pixi`. 
+- ➕ `pixi add` adds dependencies to a workspace.
+- 🌍 `pixi global install` installs tools globally on your system.
+- 🛠️ Each tool is isolated in its own virtual environment.
+
+Usage:
+```bash
+pixi global install git gh qgis
+```
+
+<br/>
+
+
+```mermaid
+graph TB
+    A[git Environment] -->|git executable| D[Shared Folder in PATH]
+    B[gh Environment] -->|gh executable| D
+    C[qgis Environment] -->|qgis executable| D
+```
+
 ---
 layout: two-cols
 ---
@@ -521,56 +521,6 @@ version = "0.1.0"
 
 [tool.pixi.package.build]
 backend = "pixi-build-python"
-```
-
----
-
-<div class="grid grid-cols-6 gap-4 mt-4">
-  <img src="/languages/c/c-original.svg" alt="C">
-  <img src="/languages/cplusplus/cplusplus-original.svg" alt="C++">
-  <img src="/languages/csharp/csharp-original.svg" alt="C#">
-  <img src="/languages/fortran/fortran-original.svg" alt="F">
-  <img src="/languages/go/go-original.svg" alt="Go">
-  <img src="/languages/haskell/haskell-original.svg" alt="Haskell">
-  <img src="/languages/java/java-original-wordmark.svg" alt="Java Wordmark">
-  <img src="/languages/javascript/javascript-original.svg" alt="JavaScript">
-  <img src="/languages/kotlin/kotlin-original.svg" alt="Kotlin">
-  <img src="/languages/lua/lua-original.svg" alt="Lua">
-  <img src="/languages/nodejs/nodejs-original-wordmark.svg" alt="Node.js Wordmark">
-  <img src="/languages/php/php-original.svg" alt="PHP">
-  <img src="/languages/python/python-original.svg" alt="Python">
-  <img src="/languages/r/r-original.svg" alt="R">
-  <img src="/languages/rust/rust-original.svg" alt="Rust">
-  <img src="/languages/typescript/typescript-original.svg" alt="TS">
-  <img src="/languages/wasm/wasm-original.svg" alt="R">
-  <img src="/languages/zig/zig-original-wordmark.svg" alt="Zig Wordmark">
-</div>
-
-
-
-
----
-
-# Pixi global
-
-- 📦 Replace `apt`, `brew` or `winget` with `pixi`. 
-- ➕ `pixi add` adds dependencies to a workspace.
-- 🌍 `pixi global install` installs tools globally on your system.
-- 🛠️ Each tool is isolated in its own virtual environment.
-
-Usage:
-```bash
-pixi global install git gh qgis
-```
-
-<br/>
-
-
-```mermaid
-graph TB
-    A[git Environment] -->|git executable| D[Shared Folder in PATH]
-    B[gh Environment] -->|gh executable| D
-    C[qgis Environment] -->|qgis executable| D
 ```
 
 ---
