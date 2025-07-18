@@ -37,13 +37,9 @@ layout: two-cols
 - 📦 Package ecosystem:
   - Cross-platform
   - Cross-language
-- 🔬 Commonly used for scientific Python
-- 🌐 Decentralized channels like:
-  - conda-forge: Most popular channel
-  - bioconda: Seperatly managed channel for bioinformatics
-  - RoboStack: Automated channel for robotics
-- Gifted to the community by Anaconda, Inc.
-- Prefix.dev GmbH: revolutionizing the conda ecosystem
+  - Environment manager
+- 🔬 Large adoption in the community for scientific Python
+- 🌐 Free Open-Source Community managed channel `conda-forge`
 
 ::right::
 
@@ -55,13 +51,13 @@ layout: two-cols
   </div>
   </div>
 
+
 ---
-layout: image-right
-image: numpylogo.svg
-backgroundSize: 30em
+layout: two-cols
 ---
 
 # Installing NumPy via Pip
+<div class="max-w-xs">
 
 From the NumPy contributor docs:
 
@@ -71,6 +67,12 @@ From the NumPy contributor docs:
 ```bash
 pip install numpy
 ```
+
+![NumPy logo](./numpylogo.svg)
+
+</div>
+
+::right::
 
 <v-click>
 
@@ -127,23 +129,85 @@ backgroundSize: 40em
 - 🔒 Reproducible thanks to lock-files
 - 🐍 Supports conda and PyPI ecosystem
 
+
 ---
-layout: center
+layout: default
+zoom: 1.5
+---
+# Building a Python library in Rust?
+
+<div class="max-w-xl items-center">
+
+```shell
+➜ pixi add python rust
+```
+```
+✔ Added python >=3.13.5,<3.14
+✔ Added rust >=1.88.0,<1.89
+```
+</div>
+
+---
+layout: default
+zoom: 1.5
+---
+# Building a Python library in C++?
+
+<div class="max-w-xl items-center">
+
+```shell
+➜ pixi add python cxx-compiler cmake
+```
+```
+✔ Added python >=3.13.5,<3.14
+✔ Added cxx-compiler >=1.10.0,<2
+✔ Added cmake >=4.0.3,<5
+```
+</div>
+
+
+---
+layout: image-right
+image: qgis.jpg
+backgroundSize: 28em
 ---
 
-# Ecosystem Comparison
+# Cross-language
 
-<div class="w-lg">
+- 📝 Version-control with `git` (written in C)
 
-| Feature                    | conda | PyPI        |
-|----------------------------|-------|-------------|
-| Official Python Index      | ⚠️    | ✅          |
-| Cross-Platform             | ✅    | ✅          |
-| Cross-Language             | ✅    | ⚠️          |
-| Decentralized              | ✅    | ⚠️          |
-| Traditional Package Manager| conda | pip (conda) |
-| Modern Package Manager     | pixi  | uv (pixi)   |
+```bash
+pixi add git 
+```
 
+- 🐙 Manage GitHub repos with `gh` (written in Go)
+
+```bash
+pixi add gh
+```
+
+- 🌍 Geoscience with `QGIS` (written in C++)
+
+```bash
+pixi add qgis
+```
+
+---
+layout: default
+zoom: 1.5
+---
+# Sharing it with others?
+
+<div class="max-w-xl items-center">
+
+```shell
+➜ git clone https://github.com/user/repo.git
+➜ cd repo
+➜ pixi run python -VV 
+```
+```
+Python 3.13.5 | packaged by conda-forge 
+```
 
 </div>
 
@@ -166,10 +230,7 @@ Or `hatch`, `poetry`, ...
 [project]
 name = "my-project"
 version = "0.1.0"
-dependencies = [
-    "matplotlib",
-    "numpy",
-]
+dependencies = ["numpy"]
 
 [tool.pixi.workspace]
 channels = ["conda-forge"]
@@ -178,9 +239,9 @@ platforms = ["linux-64", "osx-arm64", "win-64"]
 
 `Terminal`
 ```bash
-pixi run python -c "import matplotlib; import numpy"
+pixi run python -c "import numpy"
 # or
-uv run python -c "import matplotlib; import numpy"
+uv run python -c "import numpy"
 ```
 
 ---
@@ -190,27 +251,28 @@ layout: two-cols
 # Pixi Workflow
 
 <div class="max-w-xs">
-
+<v-click>
 Initialization
 ```bash
-pixi init demo
+pixi init 
 ```
+</v-click>
 <v-click>
 
-Adding `cowpy` and `python`
+Adding `cowpy`
 ```bash
-pixi add cowpy
+pixi add cowpy --pypi
 ```
 
 </v-click>
 
-<v-click at="3">
+<v-click at="4">
 
 
 Running a task
 
 ```bash
-pixi run python -m demo
+pixi run python demo.py
 ```
 
 ```
@@ -233,15 +295,17 @@ pixi run python -m demo
 `pyproject.toml`
 ````md magic-move {at: 1}
 
-<<< @/snippets/pixi-init/pyproject.toml
+<<< @/snippets/pixi-pyproject-base/pyproject.toml {*}
 
-<<< @/snippets/pixi-deps-add/pyproject.toml {9-9}
+<<< @/snippets/pixi-init/pyproject.toml {6-9}
+
+<<< @/snippets/pixi-deps-add/pyproject.toml {5}
 
 ````
 
-<v-click at="2">
+<v-click at="3">
 
-`demo/__main__.py`
+`demo.py`
 
 <<< @/snippets/pixi-deps-add/demo/__main__.py python
 
@@ -256,10 +320,12 @@ layout: two-cols
 
 <div class="max-w-xs">
 
+<v-click>
 Add a task
 ```bash
-pixi task add hello "python hello.py"
+pixi task add hello "python demo.py"
 ```
+</v-click>
 
 <div v-click>
 
@@ -289,8 +355,13 @@ pixi run hello
 
 `pyproject.toml`
 
-<<< @/snippets/pixi-task-add/pyproject.toml toml {15-16} {lines: true, maxHeight: '250px'}
+````md magic-move {at: 1}
 
+<<< @/snippets/pixi-deps-add/pyproject.toml {*}
+
+<<< @/snippets/pixi-task-add/pyproject.toml toml {11-12} {lines: true, maxHeight: '250px'}
+
+````
 
 ---
 layout: two-cols
@@ -339,47 +410,13 @@ pixi run --environment py313 hello
 ::right::
 
 `pyproject.toml`
-<<< @/snippets/pixi-multi-env/pyproject.toml toml {18-26}{maxHeight: '10em'}
+<<< @/snippets/pixi-multi-env/pyproject.toml toml {14-22}{maxHeight: '10em'}
 
-`demo/__main__.py`
+`demo.py`
 
 <<< @/snippets/pixi-multi-env/demo/__main__.py python
 
----
-layout: two-cols
----
 
-# Pixi Build
-👷 Under construction
-
-- 🏗️ Build your own conda packages directly from a `pixi.toml` or `pyproject.toml`
-- 🐍 Using the build-backend principle like PyPI
-- 🛠️ Support multi language monorepos
-- 📦 Build and publish to custom channels
-
-::right::
-
-`pyproject.toml`
-
-```toml {9-17}{lines: true}
-[project]
-name = "package-name"
-version = "0.1.0"
-
-[tool.pixi.workspace]
-channels = ["conda-forge"]
-platforms = ["win-64", "linux-64", "osx-arm64"]
-
-[tool.pixi.dependencies]
-package-name = { path = "." }
-
-[tool.pixi.package]
-name = "package-name"
-version = "0.1.0"
-
-[tool.pixi.package.build]
-backend = "pixi-build-python"
-```
 
 ---
 
@@ -391,7 +428,7 @@ backend = "pixi-build-python"
 
 <div v-click class="mt-10">
 
-<<< @/snippets/pixi-multi-env/pixi.lock yaml {123-131}{lines: true, maxHeight: '250px'}
+<<< @/snippets/pixi-multi-env/pixi.lock yaml {305-317}{lines: true, maxHeight: '250px'}
 
 </div>
 
@@ -450,6 +487,41 @@ graph LR
 ```
 
 </v-click>
+---
+layout: two-cols
+---
+
+# Pixi Build
+👷 Under construction
+
+- 🏗️ Build your packages from source
+- 🐍 Using the build-backend principle like PyPI
+- 🛠️ Support multi-language monorepos
+- 📦 Build and publish to custom channels
+
+::right::
+
+`pyproject.toml`
+
+```toml {9-17}{lines: true}
+[project]
+name = "package-name"
+version = "0.1.0"
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+package-name = { path = "." }
+
+[tool.pixi.package]
+name = "package-name"
+version = "0.1.0"
+
+[tool.pixi.package.build]
+backend = "pixi-build-python"
+```
 
 ---
 
@@ -475,31 +547,7 @@ graph LR
 </div>
 
 
----
-layout: image-right
-image: qgis.jpg
-backgroundSize: 28em
----
 
-# Cross-language
-
-- 📝 Version-control with `git` (written in C)
-
-```bash
-pixi add git 
-```
-
-- 🐙 Manage GitHub repos with `gh` (written in Go)
-
-```bash
-pixi add gh
-```
-
-- 🌍 Geoscience with `QGIS` (written in C++)
-
-```bash
-pixi add qgis
-```
 
 ---
 
