@@ -17,7 +17,7 @@
     "@types/prompts": "^2.4.9",
     "esno": "^4.8.0",
     "execa": "^9.5.2",
-    "playwright-chromium": "^1.49.1",
+    "playwright-chromium": "^1.57.0",
     "prompts": "^2.4.2",
     "typescript": "^5.7.3"
   },
