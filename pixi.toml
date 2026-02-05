@@ -1,4 +1,4 @@
-[project]
+[workspace]
 authors = ["Julian Hofer <julianhofer@gnome.org>"]
 channels = ["conda-forge"]
 description = "Slidev presentations from Julian Hofer"
