@@ -13,7 +13,7 @@
     "@slidev/cli": "^52.11.5",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
-    "@types/node": "^25.2.0",
+    "@types/node": "^25.3.0",
     "@types/prompts": "^2.4.9",
     "esno": "^4.8.0",
     "execa": "^9.6.1",
