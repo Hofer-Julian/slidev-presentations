@@ -8,7 +8,7 @@
     "@iconify-json/file-icons": "^1.2.2",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/uim": "^1.2.3",
-    "@rive-app/canvas-lite": "^2.42.2",
+    "@rive-app/canvas-lite": "^2.43.1",
     "@slidev/cli": "^53.0.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",

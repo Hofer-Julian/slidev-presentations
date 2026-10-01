@@ -18,8 +18,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       '@rive-app/canvas-lite':
-        specifier: ^2.42.2
-        version: 2.42.2
+        specifier: ^2.43.1
+        version: 2.43.1
       '@slidev/cli':
         specifier: ^53.0.0
         version: 53.0.0(@nuxt/kit@3.21.11)(@oxc-project/types@0.150.0)(@types/markdown-it@14.2.0)(@types/node@26.5.1)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.3)(vite@8.3.0(@types/node@26.5.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.13)(yaml@2.9.1)))(@vue/compiler-sfc@3.5.42)(cac@7.0.0)(esbuild@0.28.2)(hono@4.12.30)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(markdown-it@14.3.1)(oxc-parser@0.150.0)(playwright-chromium@1.63.0)(postcss@8.5.28)(rolldown@1.2.7)(srvx@1.0.3)(tsx@4.23.13)
@@ -646,8 +646,8 @@ packages:
   '@quansync/fs@1.0.0':
     resolution: {integrity: sha512-4TJ3DFtlf1L5LDMaM6CanJ/0lckGNtJcMjQ1NAV6zDmA0tEHKZtxNKin8EgPaVX1YzljbxckyT2tJrpQKAtngQ==}
 
-  '@rive-app/canvas-lite@2.42.2':
-    resolution: {integrity: sha512-Gw2SKhEE/r3RjJyuRb547eNJJCvabXaQUu6cD2o8V/5hj8dNks0lSZTi7FmAoUVfptdZzcUSbyQQVYB2S/KZhQ==}
+  '@rive-app/canvas-lite@2.43.1':
+    resolution: {integrity: sha512-6Hb9J3Yfz3JKgLYv1pU/K14kEpj6RUAFKJV/lI1LmogFsLJibA69TQLIk6NoNUUTDmrbqGc4/8ZrEmhpwf0Z9Q==}
 
   '@rolldown/binding-android-arm-eabi@1.2.7':
     resolution: {integrity: sha512-EypzgnYCwyVY4NDHKzGmNJT5b+XaQEBniHxsMdeIQLB/tcCzZnhqrzHpZFbX9iaxx+5RiB8caATBtfvZP7zVxQ==}
@@ -3612,10 +3612,10 @@ snapshots:
 
   '@devframes/json-render@0.8.2(@devframes/hub@0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.3)))(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.3))':
     dependencies:
-      '@json-render/core': 0.19.0(zod@4.5.4)
+      '@json-render/core': 0.19.0(zod@4.6.5)
       devframe: 0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.3)
       nostics: 1.2.0
-      zod: 4.5.4
+      zod: 4.6.5
     optionalDependencies:
       '@devframes/hub': 0.8.2(devframe@0.8.2(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@1.0.3))
 
@@ -3778,9 +3778,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@json-render/core@0.19.0(zod@4.5.4)':
+  '@json-render/core@0.19.0(zod@4.6.5)':
     dependencies:
-      zod: 4.5.4
+      zod: 4.6.5
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
@@ -3939,7 +3939,7 @@ snapshots:
     dependencies:
       quansync: 1.0.0
 
-  '@rive-app/canvas-lite@2.42.2': {}
+  '@rive-app/canvas-lite@2.43.1': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.7':
     optional: true
